@@ -19,7 +19,7 @@ function App() {
           style={{ margin: 'auto' }}
         >
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/flightify" element={<Home />} />
             <Route path="/tests" element={<Tests />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/home" element={<Navigate to="/" replace />} />

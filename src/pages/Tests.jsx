@@ -211,7 +211,7 @@ export default function PlaneTest() {
     // MAIN CONTAINER
     <div className="relative h-screen flex flex-col">
       {/* Test Header */}
-      <div className="p-2 bg-gray-100 border-b text-center text-sm font-semibold">
+      <div className="p-2 bg-gray-100 border-b text-center text-sm font-semibold rounded-t-2xl">
         {/* ✅ FIX 3: Defensive Rendering */}
         Current Test:{' '}
         {PLANE_DATA[selectedPlaneType]?.label || 'Loading Test...'}
@@ -221,10 +221,10 @@ export default function PlaneTest() {
       <div className="relative overflow-x-auto overflow-y-auto flex-grow shadow p-4">
         <div
           style={{
-            minWidth: '630px',
-            height: '600px', // <-- Remove this fixed height
+            minWidth: '830px',
+            height: '600px',
             backgroundImage: `url(${PLANE_DATA[selectedPlaneType]?.image})`,
-            backgroundSize: 'cover', // <-- Change to 'contain'
+            backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             position: 'relative',
           }}
@@ -292,7 +292,7 @@ export default function PlaneTest() {
       <div
         className="sticky bottom-0 left-0 right-0 z-10 
                    flex flex-col gap-3 p-4 shadow-lg rounded-t-2xl bg-gray-50 
-                   border-t border-gray-200 w-2xl"
+                   border-t border-gray-200"
       >
         <div className="flex flex-wrap gap-2">
           {/* Item mapping (uses remainingItems) */}
