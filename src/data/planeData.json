@@ -1,0 +1,66 @@
+{
+  "A380": {
+    "label": "Airbus A380-800",
+    "image": "https://www.shutterstock.com/image-vector/plane-top-view-aircraft-flight-600nw-2439936793.jpg",
+    "zones": [
+      {
+        "id": "z1",
+        "correct": ["Pilot", "Co-Pilot", "Jumpseat Pilot"],
+        "x": 200,
+        "y": 20,
+        "label": "Cockpit Crew"
+      },
+      {
+        "id": "z2",
+        "correct": ["Passenger", "Stewardess", "In-flight Chef", "Luggage"],
+        "x": 200,
+        "y": 450,
+        "label": "Cabin Payload"
+      },
+      {
+        "id": "z3",
+        "correct": [
+          "Food Cart",
+          "Life Vest",
+          "Oxygen Mask",
+          "Upper Deck Stairs"
+        ],
+        "x": 450,
+        "y": 200,
+        "label": "Unique Equipment"
+      }
+    ]
+  },
+  "B777": {
+    "label": "Boeing 777-300",
+    "image": "https://www.shutterstock.com/image-vector/plane-top-view-aircraft-flight-600nw-2439936793.jpg",
+    "zones": [
+      {
+        "id": "z1",
+        "correct": ["Pilot", "Co-Pilot", "Relief Pilot"],
+        "x": 200,
+        "y": 20,
+        "label": "Cockpit Crew"
+      },
+      {
+        "id": "z2",
+        "correct": [
+          "Passenger",
+          "Stewardess",
+          "Infant Bassinet",
+          "Cargo Pallet"
+        ],
+        "x": 200,
+        "y": 450,
+        "label": "Cabin Payload"
+      },
+      {
+        "id": "z3",
+        "correct": ["Escape Slide", "Water Cooler", "Galley Supplies"],
+        "x": 450,
+        "y": 200,
+        "label": "Unique Equipment"
+      }
+    ]
+  }
+}
