@@ -4,7 +4,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom'
-import { Home, Contact, About, NotFound } from './pages'
+import { Home, Contact, Tests, NotFound } from './pages'
 
 import { Header } from './components'
 
@@ -17,7 +17,7 @@ function App() {
         <main className="flex-1 max-w-4xl mx-auto p-6">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/tests" element={<Tests />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="*" element={<NotFound />} />
