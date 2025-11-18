@@ -14,7 +14,10 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <Header />
 
-        <main className="flex-1 max-w-4xl mx-auto p-6">
+        <main
+          className="flex-1 max-w-4xl mx-auto p-6"
+          style={{ margin: 'auto' }}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tests" element={<Tests />} />

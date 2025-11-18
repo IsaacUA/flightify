@@ -7,7 +7,7 @@ export default function Header() {
         <h1 className="text-xl font-semibold">Flightify</h1>
         <nav className="flex gap-6">
           <CustomNav to="/">Home</CustomNav>
-          <CustomNav to="/Tests">Tests</CustomNav>
+          <CustomNav to="/tests">Tests</CustomNav>
           <CustomNav to="/contact">Contact</CustomNav>
         </nav>
       </div>

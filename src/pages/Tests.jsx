@@ -1,15 +1,16 @@
 import { useState } from 'react'
+import { ButtonElement } from '../components'
 
 export default function PlaneTest() {
   const [started, setStarted] = useState(false)
   const [finished, setFinished] = useState(false)
 
   const [dropZones, setDropZones] = useState([
-    { id: 'zone1', correct: 'Engine', placed: null, x: 100, y: 180 },
-    { id: 'zone2', correct: 'Tail', placed: null, x: 450, y: 50 },
+    { id: 'zone1', correct: 'Cockpit', placed: null, x: 220, y: 30 },
+    { id: 'zone2', correct: 'Tail', placed: null, x: 200, y: 530 },
   ])
 
-  const initialItems = ['Engine', 'Tail']
+  const initialItems = ['Cockpit', 'Tail']
   const [items, setItems] = useState(initialItems)
 
   function handleDrop(e, zoneId) {
@@ -28,13 +29,15 @@ export default function PlaneTest() {
   if (!started) {
     return (
       <div className="flex flex-col gap-4">
-        <select className="p-2 border">
+        <select className="p-2 rounded shadow w-xs">
           <option>A320</option>
           <option>B737</option>
         </select>
-        <button className="p-2 bg-blue-500 text-white" onClick={handleStart}>
-          Start
-        </button>
+        <ButtonElement
+          setFunction={handleStart}
+          style={'bg-blue-400'}
+          buttonText={'Start Test'}
+        />
       </div>
     )
   }
@@ -50,13 +53,14 @@ export default function PlaneTest() {
 
   return (
     <div>
-      {/* Plane Image */}
       <div
         className="relative"
         style={{
-          width: 600,
-          height: 300,
-          backgroundImage: "url('/plane.png')",
+          width: 630,
+          height: 600,
+          overflow: 'auto',
+          backgroundImage:
+            "url('https://www.shutterstock.com/image-vector/plane-top-view-aircraft-flight-600nw-2439936793.jpg')",
           backgroundSize: 'cover',
         }}
       >
@@ -65,7 +69,7 @@ export default function PlaneTest() {
             key={zone.id}
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => handleDrop(e, zone.id)}
-            className="absolute border border-blue-500 bg-white bg-opacity-50"
+            className="absolute shadow rounded bg-amber-100 p-2"
             style={{
               width: 70,
               height: 40,
@@ -77,32 +81,27 @@ export default function PlaneTest() {
           </div>
         ))}
       </div>
-
-      {/* Items */}
-      <div className="flex gap-4 mt-6 p-4 border">
+      <div className="flex gap-4 mt-6 p-4 shadow rounded-2xl">
         {items.map((item) => (
           <div
             key={item}
             draggable
             onDragStart={(e) => e.dataTransfer.setData('text/plain', item)}
-            className="p-2 bg-gray-200 rounded"
+            className="p-2  rounded shadow"
           >
             {item}
           </div>
         ))}
       </div>
-
-      <button
-        className="mt-6 p-2 bg-green-500 text-white"
-        onClick={() => setFinished(true)}
-      >
-        Finish
-      </button>
+      <ButtonElement
+        setFunction={() => setFinished(true)}
+        style={'bg-green-400'}
+        buttonText={'Finish'}
+      />
     </div>
   )
 }
 
-// Shuffle function
 function shuffleArray(array) {
   return array
     .map((value) => ({ value, sort: Math.random() }))
